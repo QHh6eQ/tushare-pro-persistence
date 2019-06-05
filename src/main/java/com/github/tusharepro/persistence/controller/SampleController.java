@@ -1,5 +1,6 @@
 package com.github.tusharepro.persistence.controller;
 
+import com.github.tusharepro.core.TusharePro;
 import com.github.tusharepro.core.TushareProService;
 import com.github.tusharepro.core.bean.StockBasic;
 import com.github.tusharepro.core.entity.StockBasicEntity;
@@ -19,6 +20,12 @@ import java.util.List;
 public class SampleController {
 
     @Autowired private StockBasicRepository stockBasicRepository;
+
+    static {
+        TusharePro.setGlobal(new TusharePro.Builder()
+                .setToken("**********")  // 你的token
+                .build());  // 设置全局配置
+    }
 
     @PostMapping("/insert")
     public String insert() throws IOException {

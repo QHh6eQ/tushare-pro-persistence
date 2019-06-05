@@ -11,7 +11,7 @@ Tushare Pro Persistence
 ```java
 @Autowired private StockBasicRepository stockBasicRepository;
 ```
-insert...
+save...
 ```java
 for (final String value : new String[]{"L", "D", "P"}) {
     stockBasicRepository.saveAll(TushareProService.stockBasic(new Request<StockBasicEntity>() {}
@@ -19,7 +19,7 @@ for (final String value : new String[]{"L", "D", "P"}) {
             .param(StockBasic.Params.list_status.value(value))));
 }
 ```
-select...
+find...
 ```java
 stockBasicRepository.findAll();
 ```
@@ -28,7 +28,7 @@ stockBasicRepository.findAll();
 # HQL
 - 提供HQL接口方便其他语言使用
 - [HQL中文文档](http://docs.jboss.org/hibernate/core/3.5/reference/zh-CN/html/queryhql.html)
-- :8090/api/hql
+- POST http://127.0.0.1:8090/api/hql
 - request:
 ```json
 [{

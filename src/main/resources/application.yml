@@ -1,0 +1,17 @@
+server.port: 8090
+
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/tushare_pro
+    username: postgres
+    password: password
+    hikari:
+      maximum-pool-size: 24
+
+  jpa:
+    properties.hibernate:
+      hbm2ddl.auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      temp:
+        use_jdbc_metadata_defaults: false
+    show-sql: false
